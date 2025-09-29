@@ -1,0 +1,4 @@
+format: jb-book
+root: intro
+chapters:        # El ejemplo que viene
+- file: miniproyecto2nuevo        # Tu notebook (sin extensión)
