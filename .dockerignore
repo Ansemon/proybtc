@@ -121,9 +121,4 @@ ehthumbs.db
 Thumbs.db
 
 # Project specific
-*.csv
-*.ipynb
-results/
 .git/
-README.md
-save_trained_models.py
