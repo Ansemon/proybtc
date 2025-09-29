@@ -1,0 +1,2 @@
+lag_size,model_type,architecture,activation,alpha,learning_rate_init,max_iter,MAE_mean,RMSE_mean,MAPE_mean,BDS_mean
+7,MLP,"(200, 100)",relu,0.001,0.001,500,0.155308,0.207478,34.169668,0.614925

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  btc-volatility-api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: btc-volatility-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app/models:/app/app/models:ro  # Solo lectura para los modelos
+    environment:
+      - PYTHONPATH=/app
+      - ENVIRONMENT=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - btc-network
+
+networks:
+  btc-network:
+    driver: bridge

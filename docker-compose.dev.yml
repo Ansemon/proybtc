@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  btc-volatility-api-dev:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: btc-volatility-api-dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app  # Montar todo el código para hot-reload
+    environment:
+      - PYTHONPATH=/app
+      - ENVIRONMENT=development
+    command: uvicorn app.api:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - btc-dev-network
+
+networks:
+  btc-dev-network:
+    driver: bridge
+
+# =============================================================================
+# ARCHIVO: requirements.docker.txt
+# Requirements específicos para Docker (más conservador)
+# =============================================================================
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+numpy==1.24.3
+pandas==2.0.3
+scikit-learn==1.3.0
+joblib==1.3.2
+httpx==0.25.0
