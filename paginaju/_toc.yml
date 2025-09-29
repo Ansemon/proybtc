@@ -1,4 +1,9 @@
 format: jb-book
 root: intro
-chapters:        # El ejemplo que viene
-- file: miniproyecto2nuevo        # Tu notebook (sin extensión)
+parts:
+  - caption: Proyecto de Predicción de Bitcoin
+    chapters:
+    - file: 1_analisis
+      title: "Análisis Exploratorio y Preprocesamiento"
+    - file: 2_modelado
+      title: "Modelado con Deep Learning y Resultados"
