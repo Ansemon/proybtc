@@ -1,0 +1,18 @@
+/* Forzar scroll en cualquier output de celdas */
+.jp-Notebook .jp-Cell-outputWrapper,
+.jp-Notebook .jp-OutputArea-output,
+.jp-Notebook .jp-RenderedHTMLCommon,
+div.output_scroll,
+pre {
+    max-height: 500px !important; /* aumentado de 300px a 500px */
+    overflow: auto !important;
+    border: 1px solid #ddd;       /* opcional para ver el contenedor */
+    padding: 5px;                 /* opcional */
+}
+
+/* Para tablas largas */
+table {
+    max-height: 500px !important; /* igual que outputs */
+    display: block !important;
+    overflow: auto !important;
+}
